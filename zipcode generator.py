@@ -1,7 +1,7 @@
 import random
 
 data = random.sample(range(64000, 66000), 50)
-print(data)
+#print(data)
 data.sort()
 print(data)
 
