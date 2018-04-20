@@ -14,7 +14,7 @@ file.close()
 
 size = len(zip)
 
-requestNumSize = random.randint(1, 5)
+requestNumSize = random.randint(2, 5)
 requestNum = size * requestNumSize
 
 total_police = 0
@@ -22,9 +22,11 @@ total_firetruck = 0
 total_ambulance = 0
 
 out =  open('requests.csv', 'w')
+outV = open('vehicles.csv', 'w')
 #randomly choose number of children between 1 and 20% of zip for every node
 for i in range(requestNum):
     request = random.randint(0, size - 1)
+    vehicleLoc = random.randint(0, size - 1)
     vehicle = random.randint(1,3)
 
     if vehicle == AMBULANCE:
@@ -37,7 +39,9 @@ for i in range(requestNum):
     #print(str(i + 1) + "," + str(vehicle) + "," + zip[request])
         
     out.write(str(i + 1) + "," + str(vehicle) + "," + zip[request] + "\n")
+    outV.write(str(i + 1) + "," + str(vehicle) + "," + zip[vehicleLoc] + "\n")
 out.close()
+outV.close()
 
 out =  open('requestNum.txt', 'w')
 
