@@ -9,6 +9,7 @@ POLICE_CAR = 3
 
 # reads in the zipcodes and saves them to zip list
 with open('zipcodes.txt','r') as file:
+#with open('zipcodesMedTest.txt','r') as file:
     for line in file:
         data = line.rstrip()
         zip.append(data)
@@ -20,6 +21,7 @@ size = len(zip)
 # randomly selects a number between 2 and 5
 # the number is then multiplied by the number of zipcodes to determine the number of requests and vehicles
 requestNumSize = random.randint(2, 5)
+#requestNumSize = 1
 requestNum = size * requestNumSize
 
 # totals of each type of vehicle
@@ -30,6 +32,8 @@ total_ambulance = 0
 # outputs the requests and vehicles to separate files
 out =  open('requests.csv', 'w')
 outV = open('vehicles.csv', 'w')
+#out =  open('requestsMedTest.csv', 'w')
+#outV = open('vehiclesMedTest.csv', 'w')
 
 # loops through the number of requests, and randomly generates the vehicle required,
 # the location of the request, and generates a different location for the vehicle to start at
@@ -56,6 +60,7 @@ outV.close()
 
 # outputs the totals to a separate file
 out =  open('requestNum.txt', 'w')
+#out =  open('requestNumMedTest.txt', 'w')
 
 out.write(str(total_ambulance) + "," + str(total_firetruck) + "," + str(total_police) + "\n")
 

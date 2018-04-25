@@ -9,6 +9,7 @@ MAX_WEIGHT = 10
 
 # reads in the zipcodes
 with open('zipcodes.txt','r') as file:
+#with open('zipcodesMedTest.txt','r') as file:
     for line in file:
         data = line.rstrip()
         zip.append(data)
@@ -114,6 +115,7 @@ while zeroFound:
 
 # print out the graph to a file
 out =  open('graph.csv', 'w')
+#out =  open('graphMedTest.csv', 'w')
 
 for i in range(size):
     for j in range(size):
