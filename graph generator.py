@@ -27,7 +27,7 @@ zipMatrix = [[0 for x in range(size)] for y in range(size)]
 
 # generates the maximum number of connections generated per node, the max is about 20% of the number of zipcodes
 maxConnections = size / 5
-#maxConnections = 2
+#maxConnections = 1
 
 # loops through each node and generates the number of connections per node, and the nodes destinations
 for i in range(size):
