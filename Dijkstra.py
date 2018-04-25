@@ -111,10 +111,11 @@ class Heap():
 
 
 def printArr(dist, n):
-    print "Vertex\tDistance from source"
 
+    print "Vertex\tDistance from source"
     for i in range(n):
         print "%d\t\t%d" % (i, dist[i])
+
 
 
 class Graph():
@@ -192,4 +193,12 @@ class Graph():
                     # in min heap also
                     minHeap.decreaseKey(v, dist[v])
 
-        printArr(dist, V)
+
+
+        #printArr(dist, V)
+
+        return dist
+        #result={}
+        #for i in range(V):
+        #    result[str(i)]= dist[i]
+        #return result
