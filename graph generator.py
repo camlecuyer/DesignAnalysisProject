@@ -118,7 +118,7 @@ while zeroFound:
 out =  open('graph.csv', 'w')
 #out =  open('graphMedTest.csv', 'w')
 
-out.write("source,destination,distance,\n")
+out.write("source,destination,distance\n")
 
 for i in range(size):
     for j in range(size):

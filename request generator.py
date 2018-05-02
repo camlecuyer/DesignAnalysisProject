@@ -35,8 +35,8 @@ outV = open('vehicles.csv', 'w')
 #out =  open('requestsMedTest.csv', 'w')
 #outV = open('vehiclesMedTest.csv', 'w')
 
-out.write("request_ID,type,location,\n");
-outV.write("vehicle_ID,type,location,\n");
+out.write("request_ID,type,location\n");
+outV.write("vehicle_ID,type,location\n");
 
 # loops through the number of requests, and randomly generates the vehicle required,
 # the location of the request, and generates a different location for the vehicle to start at
