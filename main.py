@@ -19,7 +19,7 @@ for edg in graph_file:
         if int(edg['source']) == int(previous['destination']) and int(edg['destination']) == int(previous['source']) :
             previous_node.pop()
 
-print(previous_node)
+#print(previous_node)
 #do maping ID with zipcode:-----------------------------------------
 zipcode_ID={}
 ID_zipcode={}
@@ -31,13 +31,13 @@ for i in previous_node:
     if int(i['destination']) not in zipcode_ID.values() :
         zipcode_ID[j]=int(i['destination'])
         j= j + 1
-print (zipcode_ID)
+#print (zipcode_ID)
 # reserve ID and map to use them again in final result:
 for k in zipcode_ID:
     value=zipcode_ID[k]
     ID_zipcode[value]=k
-print (ID_zipcode)
-print ('values',zipcode_ID.values())
+#print (ID_zipcode)
+#print ('values',zipcode_ID.values())
 #--------------------------------------------------------------------
 
 number_of_zipcodes = len(ID_zipcode)
@@ -55,13 +55,13 @@ for i in previous_node:
     #print(edg['source'], edg['destination'], edg['distance'])
 
 # read csv files for vehicles and request and put them in dictionary:---------------------
-vehicles_file= csv.DictReader(open("vehicles1.csv"))
+vehicles_file= csv.DictReader(open("vehicles_case.csv"))
 vehicles=[]
 for v in vehicles_file:
     v['availability']= True
     vehicles.append(v)
 
-request_file = csv.DictReader(open("requests1.csv"))
+request_file = csv.DictReader(open("request_cases.csv"))
 requests =[]
 for r in request_file:
     requests.append(r)
@@ -76,7 +76,8 @@ for req in requests:
             req['vehicle_ID'] = vec['vehicle_ID']
             req['distance'] = 0
             vec['availability'] = False
-            print ('same place', req)
+            req['vehicle_location '] = vec['location']
+            print (req)
             break
 
     if 'vehicle_ID' not in req:
